@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { ChevronDown, MapPin, Star } from 'lucide-react';
 import { useRef } from 'react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './imagefall/ImageWithFallback';
 
 export function HeroSection() {
   const sectionRef = useRef<HTMLDivElement>(null);

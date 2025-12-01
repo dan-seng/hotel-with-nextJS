@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { Calendar, Users, Bed, CreditCard } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { useScroll, useTransform } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './imagefall/ImageWithFallback';
 
 export function BookingSection() {
   const [formData, setFormData] = useState({

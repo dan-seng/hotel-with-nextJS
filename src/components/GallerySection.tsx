@@ -1,7 +1,7 @@
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import Masonry from 'react-responsive-masonry';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './imagefall/ImageWithFallback';
 
 const galleryImages = [
   {

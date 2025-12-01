@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Users, Maximize, Wifi, Coffee } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './imagefall/ImageWithFallback';
 import { useState, useRef } from 'react';
 import { RoomDetailModal } from './RoomDetailModal';
 import { useScroll, useTransform } from 'motion/react';

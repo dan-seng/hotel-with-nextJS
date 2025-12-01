@@ -2,7 +2,7 @@ import { motion, easeOut } from 'motion/react';
 import { Star, Quote } from 'lucide-react';
 import { useRef } from 'react';
 import { useScroll, useTransform } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
+import { ImageWithFallback } from './imagefall/ImageWithFallback';
 
 const testimonials = [
   {
