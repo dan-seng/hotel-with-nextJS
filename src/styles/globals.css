@@ -44,14 +44,16 @@
 
 
 
-h1.hero {
-  font-family: 'bb', sans-serif !important;
+.hero {
+  font-family: 'bb', sans-serif;
+    font-size: 8rem;
 }
 .hero-desc{
-font-family: 'flowmery';
+font-family: 'Poppins', sans-serif;
+font-size: 1.25rem;
 }
 .impr{
-  font-family: 'bb', sans-serif !important;
+  font-family: 'bb', sans-serif;
 }
 
 

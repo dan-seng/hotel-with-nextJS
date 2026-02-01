@@ -1,7 +1,35 @@
 import { motion } from 'motion/react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Facebook, Instagram, Twitter, Linkedin } from 'lucide-react';
 
 export function Footer() {
+  const [email, setEmail] = useState('');
+  const [error, setError] = useState('');
+
+  const validateEmail = (email: string) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+    
+    if (!email.trim()) {
+      setError('Email is required');
+      return;
+    }
+    
+    if (!validateEmail(email)) {
+      setError('Please enter a valid email address');
+      return;
+    }
+    
+    // If we get here, email is valid
+    alert(`Subscribed to ${email}`);
+    setEmail('');
+  };
+
   const footerLinks = {
     explore: [
       { name: 'Rooms & Suites', href: '#rooms' },
@@ -178,21 +206,43 @@ export function Footer() {
             <p className="text-white/60 mb-6">
               Subscribe to receive exclusive offers and updates
             </p>
-            <form className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-6 py-3 bg-white/10 border border-white/20 rounded-full text-white placeholder-white/40 focus:outline-none focus:border-white/40 transition-colors"
-              />
-              <motion.button
-                type="submit"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-black rounded-full hover:bg-white/90 transition-colors"
-              >
-                Subscribe
-              </motion.button>
-            </form>
+           <form 
+  onSubmit={handleSubscribe} 
+  className="flex flex-col gap-2 max-w-md mx-auto w-full"
+>
+  <div className="flex flex-col sm:flex-row gap-4 w-full">
+    <div className="relative flex-1">
+      <input
+        type="email"
+        value={email}
+        placeholder="Enter your email"
+        onChange={(e) => setEmail(e.target.value)}
+        className={`w-full px-6 py-3 bg-white/10 border rounded-full text-white placeholder-white/40 focus:outline-none transition-colors ${
+          error ? 'border-red-500' : 'border-white/20 focus:border-white/40'
+        }`}
+        aria-label="Email address"
+        aria-invalid={!!error}
+        aria-describedby={error ? 'email-error' : undefined}
+      />
+      {error && (
+        <p 
+          id="email-error" 
+          className="absolute left-6 -bottom-5 text-red-400 text-xs mt-1 font-medium"
+        >
+          {error}
+        </p>
+      )}
+    </div>
+    <motion.button
+      type="submit"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      className="px-8 py-3 bg-white text-black rounded-full hover:bg-white/90 transition-colors whitespace-nowrap"
+    >
+      Subscribe
+    </motion.button>
+  </div>
+</form>
           </div>
         </motion.div>
 
@@ -206,7 +256,7 @@ export function Footer() {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-white/40 text-sm text-center md:text-left">
-              © 2025 Imperial Residence. All rights reserved.
+              © 2026 Imperial Residence. All rights reserved.
             </p>
             <div className="flex flex-wrap gap-6 text-sm">
               {footerLinks.policies.map((link, index) => (

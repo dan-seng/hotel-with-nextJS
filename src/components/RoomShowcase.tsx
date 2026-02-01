@@ -30,7 +30,7 @@ const rooms = [
     id: 3,
     name: 'Presidential Suite',
     price: '1200',
-    image: 'https://images.unsplash.com/photo-1559414059-34fe0a59e57a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMHBlbnRob3VzZSUyMHZpZXd8ZW58MXx8fHwxNzY0NDc5MzQzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
+    image: 'https://images.unsplash.com/photo-1731336478850-6bce7235e320?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGJlZHJvb218ZW58MXx8fHwxNzY0NDA2NzUzfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
     size: '1200 sq ft',
     capacity: '4 Guests',
     description: 'Ultimate luxury with panoramic views and exclusive amenities.',
@@ -197,7 +197,7 @@ export function RoomShowcase() {
                     onClick={() => setSelectedRoom(room)}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className="w-full py-3.5 bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors duration-300"
+                    className="w-full py-3.5 bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors duration-300 cursor-pointer"
                   >
                     View Details
                   </motion.button>

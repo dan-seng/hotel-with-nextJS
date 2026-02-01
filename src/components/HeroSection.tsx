@@ -15,8 +15,7 @@ export function HeroSection() {
 
   return (
     <section ref={sectionRef} className="relative h-screen w-full overflow-hidden">
-    <div className='mt-20'>
-        {/* Parallax Background */}
+    
       <motion.div style={{ y }} className="absolute inset-0 w-full h-[120%]">
         <div className="absolute inset-0 bg-black/40 z-10" />
         <ImageWithFallback
@@ -26,46 +25,32 @@ export function HeroSection() {
         />
       </motion.div>
 
-      {/* Content Container */}
       <motion.div style={{ opacity }} className="relative z-20 h-full flex items-center">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="max-w-4xl">
+          <div className="max-w-full">
 
             {/* Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="text-white mb-6 text-center hero"
+              className="text-white mb-6 text-center hero mt-3"
             >
-               Where Elegance
+              Where Elegance
               <br />
               Meets Perfection
             </motion.h1>
 
-           <div   className='flex justify-between'>
-             {/* Subtitle */}
+            {/* Subtitle */}
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-white/80 max-w-2xl mb-8 lg:mb-8 hero-desc"
+              className="text-white/80 max-w-2xl mb-8  px-2 lg:mb-12 hero-desc text-3xl"
             >
               Experience unparalleled luxury in the heart of the city. Every moment crafted to perfection,
               every detail designed for your ultimate comfort.
             </motion.p>
-
-                        {/* Glass Badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex glass items-center p-2 rounded-full mb-10 text-white/50"
-            >
-             5-<Star className="w-2 h-2 text-yellow-400 fill-yellow-400" /> Luxury Experience
-            </motion.div>
-
-           </div>
 
             {/* Location Badge */}
             <motion.div
@@ -75,7 +60,7 @@ export function HeroSection() {
               className="flex items-center gap-2 text-white/70 mb-10"
             >
               <MapPin className="w-5 h-5" />
-              <span>Addis Ababa, Ethiopia</span>
+              <span>Manhattan, New York City</span>
             </motion.div>
 
             {/* CTA Buttons */}
@@ -137,7 +122,6 @@ export function HeroSection() {
         transition={{ duration: 1.5, delay: 1.2 }}
         className="absolute bottom-1/4 right-32 w-20 h-20 glass rounded-full hidden xl:block"
       />
-    </div>
     </section>
   );
 }

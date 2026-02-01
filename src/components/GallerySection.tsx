@@ -2,7 +2,7 @@ import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
 import Masonry from 'react-responsive-masonry';
 import { ImageWithFallback } from './imagefall/ImageWithFallback';
-
+import OnDev from './OnDev';
 const galleryImages = [
   {
     src: 'https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsdXh1cnklMjBob3RlbCUyMGxvYmJ5fGVufDF8fHx8MTc2NDQwMDUxNHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral',
@@ -122,10 +122,12 @@ export function GallerySection() {
                     <ImageWithFallback
                       src={image.src}
                       alt={image.alt}
+                      width={500}
+                      height={750}
                       className={`w-full object-cover ${
-                        image.height === 'tall' ? 'h-96' :
-                        image.height === 'short' ? 'h-64' :
-                        'h-80'
+                        image.height === 'tall' ? 'h-[600px]' :
+                        image.height === 'short' ? 'h-[450px]' :
+                        'h-[500px]'
                       }`}
                     />
                   </motion.div>
@@ -158,6 +160,7 @@ export function GallerySection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="px-8 py-4 bg-neutral-900 text-white rounded-full hover:bg-neutral-800 transition-colors duration-300"
+            onClick={() => alert('This page is under development.')}
           >
             View Full Gallery
           </motion.button>
